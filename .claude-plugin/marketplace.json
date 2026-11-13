@@ -1,0 +1,12 @@
+{
+  "name": "skill-router",
+  "description": "Skill Router: the right skills for every task, per person",
+  "owner": { "name": "Shahriyor272011", "url": "https://github.com/Shahriyor272011" },
+  "plugins": [
+    {
+      "name": "skill-router",
+      "source": "./",
+      "description": "Finds the installed skills and skill sets that fit each request and work phase, and gently makes sure Claude uses them."
+    }
+  ]
+}

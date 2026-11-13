@@ -1,0 +1,27 @@
+{
+  "name": "skill-router",
+  "displayName": "Skill Router",
+  "version": "0.1.0",
+  "description": "Finds the installed skills and skill sets that fit each request and each work phase, shows them to Claude on every task, and holds back changes once, never for tiny edits, until one is used.",
+  "author": { "name": "Shahriyor272011", "url": "https://github.com/Shahriyor272011" },
+  "homepage": "https://github.com/Shahriyor272011/claude-skill-router",
+  "repository": "https://github.com/Shahriyor272011/claude-skill-router",
+  "license": "MIT",
+  "keywords": ["skills", "routing", "hooks", "productivity", "context", "russian"],
+  "userConfig": {
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "off: do nothing. suggest: show matching skills, never block. guided: also hold back one change per phase, only for strong matches and never for tiny edits. strict: hold back until a skill is used.",
+      "options": ["off", "suggest", "guided", "strict"],
+      "default": "guided"
+    },
+    "language": {
+      "type": "string",
+      "title": "Message language",
+      "description": "Language of the hints Claude receives. Russian prompts are understood in both settings.",
+      "options": ["en", "ru"],
+      "default": "en"
+    }
+  }
+}

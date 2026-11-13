@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python3", "args": ["${CLAUDE_PLUGIN_ROOT}/bin/skill-router", "hook", "prompt"], "timeout": 10 }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit|Bash|Agent",
+        "hooks": [
+          { "type": "command", "command": "python3", "args": ["${CLAUDE_PLUGIN_ROOT}/bin/skill-router", "hook", "pretool"], "timeout": 5 }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          { "type": "command", "command": "python3", "args": ["${CLAUDE_PLUGIN_ROOT}/bin/skill-router", "hook", "posttool"], "timeout": 5 }
+        ]
+      }
+    ]
+  }
+}
