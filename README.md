@@ -25,7 +25,7 @@ Skill Router searches the *full* set of skills on your side, in a hook, and give
 | `off` | none | never |
 | `suggest` | every task | never |
 | `guided` (default) | every task | once per phase, only when a strong match exists and no skill was used, never for tiny edits (typo, rename, format) |
-| `strict` | every task | until a skill is used, up to three times per phase |
+| `strict` | every task | until a skill is used, up to three times per phase; tiny edits are still never held back |
 
 "Holding back" means a `PreToolUse` denial on Edit, Write, MultiEdit, NotebookEdit, Agent and Bash commands that change things. Read-only commands (`ls`, `git status`, `grep`, ...) always pass. Claude can leave at any time with the `skill-router:none-fits` skill and a one-line reason, so a wrong match never traps it. Subagents are not gated. A skill you type yourself (`/frontend-design ...`) counts as your choice.
 
